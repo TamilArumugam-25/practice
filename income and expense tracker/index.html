@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-6 min-h-screen flex items-center justify-center">
+    <div class="max-w-2xl mx-auto bg-gray-800 p-6 rounded-lg shadow-xl border-2 border-purple-500">
+        <h2 class="text-3xl font-bold text-center text-purple-400 mb-4">💰 Income & Expense Tracker 💸</h2>
+        
+        <div class="mb-4 text-center">
+            <h3 class="text-xl font-semibold">Balance: <span id="balance" class="text-blue-400">$0.00</span></h3>
+            <h4 class="text-green-400">Total Income: <span id="total-income">$0.00</span></h4>
+            <h4 class="text-red-400">Total Expense: <span id="total-expense">$0.00</span></h4>
+        </div>
+        
+        <div class="mb-4">
+            <input type="text" id="description" placeholder="Description" class="w-full p-3 border-2 border-purple-400 rounded-lg mb-2 bg-gray-700 text-white focus:ring-2 focus:ring-purple-500">
+            <input type="number" id="amount" placeholder="Amount" class="w-full p-3 border-2 border-purple-400 rounded-lg mb-2 bg-gray-700 text-white focus:ring-2 focus:ring-purple-500">
+            <input type="date" id="date" class="w-full p-3 border-2 border-purple-400 rounded-lg mb-2 bg-gray-700 text-white focus:ring-2 focus:ring-purple-500">
+            <select id="type" class="w-full p-3 border-2 border-purple-400 rounded-lg mb-2 bg-gray-700 text-white">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <div class="flex gap-2">
+                <button id="add-btn" class="bg-green-500 text-white px-4 py-2 rounded-lg w-full hover:bg-green-600">➕ Add Entry</button>
+                <button id="reset-btn" class="bg-gray-600 text-white px-4 py-2 rounded-lg w-full hover:bg-gray-700">♻️ Reset</button>
+            </div>
+        </div>
+        
+        <div class="text-center mb-4">
+            <h3 class="text-lg font-semibold">Filter:</h3>
+            <label class="mr-2"><input type="radio" name="filter" value="all" checked> All</label>
+            <label class="mr-2"><input type="radio" name="filter" value="income"> Income</label>
+            <label><input type="radio" name="filter" value="expense"> Expense</label>
+        </div>
+        
+        <ul id="entries" class="mt-4 space-y-2"></ul>
+    </div>
+</body>
+</html>
