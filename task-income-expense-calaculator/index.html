@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+        <h2 class="text-3xl font-bold mb-4 text-center text-gray-800">Income Expense Calculator</h2>
+        
+        <!-- Summary Section -->
+        <div class="mb-4 p-4 bg-gray-200 rounded-md text-center shadow-md">
+            <p class="text-lg">Total Income: <span id="total-income" class="text-green-600 font-bold">$0</span></p>
+            <p class="text-lg">Total Expense: <span id="total-expense" class="text-red-600 font-bold">$0</span></p>
+            <p class="text-xl font-bold">Net Balance: <span id="net-balance" class="font-bold text-gray-700">$0</span></p>
+        </div>
+
+        <!-- Input Form -->
+        <div class="mb-4 bg-white p-4 rounded-lg shadow-md border border-gray-300">
+            <input id="description" type="text" placeholder="Description" class="w-full p-2 mb-2 border rounded border-gray-400" />
+            <input id="amount" type="number" placeholder="Amount" class="w-full p-2 mb-2 border rounded border-gray-400" />
+            <select id="type" class="w-full p-2 mb-2 border rounded border-gray-400 bg-white">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button onclick="addEntry()" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded font-bold">Add Entry</button>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="mb-4 flex gap-2 justify-center bg-gray-200 p-2 rounded-lg shadow-md">
+            <label class="text-lg font-bold text-gray-700"><input type="radio" name="filter" value="all" checked onclick="filterEntries()"> All</label>
+            <label class="text-lg font-bold text-green-700"><input type="radio" name="filter" value="income" onclick="filterEntries()"> Income</label>
+            <label class="text-lg font-bold text-red-700"><input type="radio" name="filter" value="expense" onclick="filterEntries()"> Expense</label>
+        </div>
+
+        <!-- Entries List -->
+        <ul id="entries-list" class="space-y-2"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
